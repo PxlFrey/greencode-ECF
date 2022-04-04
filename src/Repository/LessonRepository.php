@@ -73,4 +73,11 @@ class LessonRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findLessons () : Lesson
+    {
+        return $this->find(['slug']);
+    }
+    
+
 }

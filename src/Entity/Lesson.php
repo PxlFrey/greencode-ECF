@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
+use App\Model\TimeInterface;
 use App\Repository\LessonRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LessonRepository::class)]
-class Lesson
+class Lesson implements TimeInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -33,21 +34,20 @@ class Lesson
     #[ORM\Column(type: 'datetime', nullable: true)]
     private $updatedAt;
 
-    #[ORM\ManyToMany(targetEntity: Category::class, mappedBy: 'lessons')]
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'lessons')]
     private $category;
 
     #[ORM\OneToMany(mappedBy: 'lesson', targetEntity: Comment::class, orphanRemoval: true)]
     private $comments;
 
-    #[ORM\ManyToOne(targetEntity: Media::class)]
-    private $featuredImage;
+    //#[ORM\ManyToOne(targetEntity: Media::class)]
+    //private $featuredImage;
 
     public function __construct()
     {
         $this->category = new ArrayCollection();
         $this->comments = new ArrayCollection();
     }
-
 
 
     public function getId(): ?int
@@ -196,4 +196,12 @@ class Lesson
         return $this;
     }
 
+    public function __toString() : string
+    {
+        return $this->title;
+    }
+
 }
+
+
+

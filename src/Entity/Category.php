@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
+use App\Model\TimeInterface;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
-class Category
+class Category implements TimeInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -24,8 +25,20 @@ class Category
     #[ORM\Column(type: 'string', length: 10)]
     private $color;
 
-    #[ORM\ManyToMany(targetEntity: Lesson::class, inversedBy: 'category')]
+    #[ORM\ManyToMany(targetEntity: Lesson::class, mappedBy: 'category')]
     private $lessons;
+
+    //#[ORM\ManyToOne(targetEntity: Media::class, inversedBy: 'categories')]
+    //private $featuredImage;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $featuredText;
+
+    #[ORM\Column(type: 'datetime')]
+    private $createdAt;
+
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $updatedAt;
 
     public function __construct()
     {
@@ -97,5 +110,56 @@ class Category
         return $this;
     }
 
+    public function getFeaturedImage(): ?Media
+    {
+        return $this->featuredImage;
+    }
 
+    public function setFeaturedImage(?Media $featuredImage): self
+    {
+        $this->featuredImage = $featuredImage;
+
+        return $this;
+    }
+
+    public function getFeaturedText(): ?string
+    {
+        return $this->featuredText;
+    }
+
+    public function setFeaturedText(?string $featuredText): self
+    {
+        $this->featuredText = $featuredText;
+
+        return $this;
+    }
+
+    public function __toString() : string
+    {
+        return $this->name;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
 }

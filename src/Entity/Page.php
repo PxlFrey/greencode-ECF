@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
+use App\Model\TimeInterface;
 use App\Repository\PageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PageRepository::class)]
-class Page
+class Page implements TimeInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

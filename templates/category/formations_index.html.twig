@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos formations{% endblock %}
+
+{% block content %}
+           <h1>Liste de nos formations actuelles</h1>
+               <div class="list">
+                {% for category in categories %}
+                {%  include 'category/item_formation.html.twig' with { categories } %}
+                {% endfor %}
+               </div>
+
+
+{% endblock %}

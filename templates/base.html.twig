@@ -1,19 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>GreenCode - {% block title %} {% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+          <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-    </body>
+        <!--MENU MOBILE - DEBUT- --> 
+        <div class="mobile-bloc">
+
+            <a class="burger-menu" href="#">
+                <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 16H24V13.3333H0V16ZM0 9.33333H24V6.66667H0V9.33333ZM0 0V2.66667H24V0H0Z" fill="#"/>
+            </svg>
+            </a>  
+        </div>  
+        <div class="menu-mobile">
+
+            <div class="mobile-bloc">
+                <a class="close-menu" href="#">
+                    <svg width="35" height="35" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4C12.94 4 4 12.94 4 24C4 35.06 12.94 44 24 44C35.06 44 44 35.06 44 24C44 12.94 35.06 4 24 4ZM24 40C15.18 40 8 32.82 8 24C8 15.18 15.18 8 24 8C32.82 8 40 15.18 40 24C40 32.82 32.82 40 24 40ZM31.18 14L24 21.18L16.82 14L14 16.82L21.18 24L14 31.18L16.82 34L24 26.82L31.18 34L34 31.18L26.82 24L34 16.82L31.18 14Z" fill="#"/>
+                    </svg>
+                </a>
+            </div>    
+            {% if app.user %}
+                    <ul>
+                        <li>Bonjour {{ app.user.username }} !</li>
+
+                        <li><a href="{{ path('home') }}">Accueil</a></li>
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                        <li><a href="{{ path('category') }}">Nos formations</a></li>
+                        {% if app.user.roles[0] == 'ROLE_ADMIN' %}
+                        <button type="button"><a href="{{ path('admin') }}">Administration</a></button>
+                        {% endif %}
+                        <button type="button"><a href="{{ path('learn') }}">Mon compte</a></button>
+                    </ul>    
+                    {% endif %}
+                    {% if not app.user %}
+                    <ul>
+                        <li class="current"><a href="{{ path('home') }}">Accueil</a></li>
+                        <li><a href="{{ path('login') }}">Se connecter</a></li>
+                        <li><a href="{{ path('category') }}">Nos formations</a></li>
+                        <li><a href="#">Devenir formateur</a></li>
+                        <li><a href="{{ path('register') }}">S'inscrire</a></li>
+
+                    </ul>
+                    {% endif %}
+            </div>
+        <!--MENU MOBILE - FIN- -->
+        <header class="hidden">
+
+            <!--MENU DESKTOP - DEBUT- --> 
+            <div class="desktop-nav">
+                <div id="logo">
+                    <a href="{{ path('home') }}"><img src={{ asset("assets/img/logo.png") }}></a>
+                </div>
+                <div class="navigation">
+                    {% if app.user %}
+                    <ul>
+                        <li>Bonjour {{ app.user.username }} !</li>
+
+                        <li><a href="{{ path('home') }}">Accueil</a></li>
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                        <li><a href="{{ path('category') }}">Nos formations</a></li>
+                        {% if app.user.roles[0] == 'ROLE_ADMIN' %}
+                        <button type="button"><a href="{{ path('admin') }}">Administration</a></button>
+                        {% endif %}
+                        <button type="button"><a href="{{ path('learn') }}">Mon compte</a></button>
+                    </ul>    
+                    {% endif %}
+                    {% if not app.user %}
+                    <ul>
+                        <li class="current"><a href="{{ path('home') }}">Accueil</a></li>
+                        <li><a href="{{ path('category') }}">Nos formations</a></li>
+                        <li><a href="#">Devenir formateur</a></li>
+                        <li><a href="{{ path('register') }}">S'inscrire</a></li>
+                    <button type="button"><a href="{{ path('login') }}">Se connecter</a></button>
+                    </ul>
+                    {% endif %}
+
+                </div>                    
+            </div>             
+            <!--MENU DESKTOP - FIN- -->  
+        </header>
+
+        {% block body %}
+            <div class="main-container">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+        {% endblock %}
+
+
+        <footer>
+            <p class="copyright">@ {{ 'now'|date ('Y') }} MineDeRien. Tous droits réservés.</p>
+        </footer>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="{{ asset('assets/js/greencode.js') }}"></script>
+     </body>
 </html>
