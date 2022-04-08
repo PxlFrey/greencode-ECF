@@ -2,14 +2,18 @@ $(function() {
 
 // MENU MOBILE
 
+
   $('.burger-menu').click(function(e) {
-    $('.menu-mobile').slideDown(1000);
+    $('.hidden').fadeOut(1000);
+    $('.page').fadeOut(1000);
+    $('.menu-mobile').fadeIn(1000);
     e.preventDefault();
   });
 
   $('.close-menu').click(function(e) {
-    $('.menu-mobile').slideUp(500);
-    $('.hidden').fadeIn();
+    $('.menu-mobile').fadeOut(1000);
+    $('.page').fadeIn(1000);
+    $('.hidden').fadeIn(1000);
     e.preventDefault();
   });
 

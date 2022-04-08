@@ -3,12 +3,17 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Lesson;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+
 
 class LessonCrudController extends AbstractCrudController
 {
@@ -19,15 +24,30 @@ class LessonCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('title', 'Titre de la leçon');
-        yield SlugField::new('slug')
-            ->setTargetFieldName('title');
-        yield AssociationField::new('category');
-        yield TextField::new('descText', 'Texte d\'accroche');
-        yield TextEditorField::new('content', 'Contenu');
-        yield DateTimeField::new('createdAt')
-            ->hideOnForm();
-        yield DateTimeField::new('updatedAt')
-            ->hideOnForm();
+        return [
+            TextField::new('title', 'Titre de la leçon'),
+            SlugField::new('slug')
+               ->hideOnIndex()
+               ->hideOnForm()
+               ->setTargetFieldName('title'),
+            AssociationField::new('category', 'Formation'),
+
+            TextField::new('imageFile')
+                ->setFormType(VichImageType::class)
+                ->onlyOnForms(),
+            ImageField::new('file', 'Image principal')
+               ->setBasePath('/uploads/img/lesson/')
+               ->onlyOnIndex(),
+            UrlField::new('url', 'Url de la leçon'),   
+            TextField::new('featuredText', 'Résumé')
+                ->hideOnIndex(),
+            TextEditorField::new('content', 'Contenu'),
+            DateTimeField::new('createdAt')
+               ->hideOnForm(),
+            DateTimeField::new('updatedAt')
+               ->hideOnForm()
+           
+        ];
+
     }
 }

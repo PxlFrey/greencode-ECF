@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Postuler chez GreenCode{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="form-col">
+        <h1>Postuler chez GreenCode</h1>
+        <form name="coach-form" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="firstName" for="coach_form_firstName">Prénom</label>
+                <input id="coach_form_firstName" type="text" name="coach_form[firstName]" class="form-control" max-length="255" placeholder="Prénom">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName" for="coach_form_lastName">Nom</label>
+                <input id="coach_form_lastName" type="text" name="coach_form[lastName]" class="form-control" max-length="255" placeholder="Nom">
+            </div>
+
+            <div class="form-group">
+                <label for="username" for="coach_form_username">Pseudo</label>
+                <input id="coach_form_username" type="text" name="coach_form[username]" class="form-control" max-length="255" placeholder="Pseudo">
+            </div>
+
+            <div class="form-group">
+                <label for="story" for="coach_form_story">Présentation</label>
+                <textarea id="coach_form_story" name="coach_form[story]" class="form-control" placeholder="Veuillez vous présenter en quelques lignes"></textarea> 
+            </div>
+            
+            <div class="form-group">
+                <label for="email" for="coach_form_email">Adresse email</label>
+                <input id="coach_form_email" required="required" type="email" name="coach_form[email]" class="form-control" max-length="180" placeholder="Adresse email"> 
+            </div>
+
+            <div class="form-group">
+                <label for="password" for="coach_form_plainPassword">Mot de passe</label>
+                <input id="coach_form_plainPassword" required="required" type="password" name="coach_form[plainPassword]" class="form-control" autocomplete="new-password">
+            </div>
+            
+            <div class="form-group">
+                <fieldset>
+                    <legend>Photo de profil</legend>
+                    <div class="vich-image">
+                        <input id="coach_form_imageFile_file" type="file" name="coach_form[imageFile][file]" class="form-control" placeholder="Photo de profil">
+                    </div>
+                </fieldset>    
+            </div>
+            
+            <div class="form-check">
+                <input id="coach_form_agreeTerms" type="checkbox" name="coach_form[agreeTerms]" class="form-check-input" required="required" value="1">
+                <label for="coach_form_agreeTerms" class="form-check-label">J'accepte les <a href="#">conditions générales d'utilisation</a></label>
+            </div>    
+            
+            <button type="submit" class="btn-login">S'inscrire</button>
+        
+            <input id="coach_form_token" type="hidden" name="coach_form[_token]" value="{{ csrf_token('coach_form') }}">
+        </form>
+
+    </div>
+    <div class="right-col">
+        <div class="register-img"></div>
+    </div>
+</section>            
+
+
+
+
+
+
+
+{% endblock %}
+

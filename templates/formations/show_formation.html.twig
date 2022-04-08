@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <div class="formation-basis">
+        <div class="formation-title">
+            <h1>{{  category.name  }}</h1>
+        </div>
+        
+        <div class="formation-image" style="background: url({{ vich_uploader_asset(category, 'imageFile') }}) center no-repeat; background-size: cover;" alt="..."></div>
+
+        <div class="formation-description">
+            <h2>Description de la formation</h2>
+            {{  category.featuredText|raw }}
+        </div>    
+        
+        <div class="lessons-list">
+            <h2>Liste des leçons</h2>
+                {% include 'lesson/list_lesson.html.twig' with {'lessons': category.lessons} %}
+        </div>
+    </div>
+{% endblock %}

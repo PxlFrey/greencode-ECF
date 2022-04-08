@@ -18,7 +18,7 @@ class CategoryController extends AbstractController
         if (!$categoryRepository) {
             return $this->redirectToRoute('home');
         }
-        return $this->render('category/formations_index.html.twig', [
+        return $this->render('formations/formations_index.html.twig', [
             'categories' => $categoryRepository->findAll(),
         ]);
     }
@@ -29,7 +29,7 @@ class CategoryController extends AbstractController
         if (!$category) {
             return $this->redirectToRoute('home');
         }
-        return $this->render('category/show_formation.html.twig', [
+        return $this->render('formations/show_formation.html.twig', [
             'category' => $category,
         ]);
             

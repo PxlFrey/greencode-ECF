@@ -7,8 +7,14 @@ use App\Repository\LessonRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: LessonRepository::class)]
+/**
+ * @Vich\Uploadable
+ */
+
 class Lesson implements TimeInterface
 {
     #[ORM\Id]
@@ -26,7 +32,7 @@ class Lesson implements TimeInterface
     private $content;
 
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
-    private $descText;
+    private $featuredText;
 
     #[ORM\Column(type: 'datetime')]
     private $createdAt;
@@ -37,16 +43,28 @@ class Lesson implements TimeInterface
     #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'lessons')]
     private $category;
 
-    #[ORM\OneToMany(mappedBy: 'lesson', targetEntity: Comment::class, orphanRemoval: true)]
-    private $comments;
+    #[ORM\ManyToMany(targetEntity: Library::class, inversedBy: 'lessons')]
+    private $media;
 
-    //#[ORM\ManyToOne(targetEntity: Media::class)]
-    //private $featuredImage;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $file;
+
+    /**
+     * @Vich\UploadableField(mapping="lesson_images", fileNameProperty="file")
+     * @var File
+     */
+    private $imageFile;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $url;
+
+
+
 
     public function __construct()
     {
         $this->category = new ArrayCollection();
-        $this->comments = new ArrayCollection();
+        $this->media = new ArrayCollection();
     }
 
 
@@ -91,9 +109,9 @@ class Lesson implements TimeInterface
         return $this;
     }
 
-    public function getDescText(): ?string
+    public function getFeaturedText(): ?string
     {
-        return $this->descText;
+        return $this->featuredText;
     }
 
     public function setDescText(?string $descText): self
@@ -155,50 +173,70 @@ class Lesson implements TimeInterface
     }
 
     /**
-     * @return Collection<int, Comment>
+     * @return Collection<int, Library>
      */
-    public function getComments(): Collection
+    public function getMedia(): Collection
     {
-        return $this->comments;
+        return $this->media;
     }
 
-    public function addComment(Comment $comment): self
+    public function addMedium(Library $medium): self
     {
-        if (!$this->comments->contains($comment)) {
-            $this->comments[] = $comment;
-            $comment->setLesson($this);
+        if (!$this->media->contains($medium)) {
+            $this->media[] = $medium;
         }
 
         return $this;
     }
 
-    public function removeComment(Comment $comment): self
+    public function removeMedium(Library $medium): self
     {
-        if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
-            if ($comment->getLesson() === $this) {
-                $comment->setLesson(null);
-            }
+        $this->media->removeElement($medium);
+
+        return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    public function setImageFile(File $file = null)
+    {
+        $this->imageFile = $file;
+
+        if ($file) {
+            $this->updatedAt = new \DateTime('now');
         }
-
-        return $this;
     }
 
-    public function getFeaturedImage(): ?Media
+    public function getImageFile(): ?File
     {
-        return $this->featuredImage;
-    }
-
-    public function setFeaturedImage(?Media $featuredImage): self
-    {
-        $this->featuredImage = $featuredImage;
-
-        return $this;
+        return $this->imageFile;
     }
 
     public function __toString() : string
     {
         return $this->title;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
+
+        return $this;
     }
 
 }

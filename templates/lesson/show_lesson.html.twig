@@ -2,14 +2,25 @@
 
 {% block title %}{{ lesson.title }}{% endblock %}
 
-{% block body %}
-    <div class="lesson-header">
-        <h1>{{ lesson.title }}</h1>
-        <p>{{ lesson.createdAt|date('d M Y') }}</p>
-        <p>{{ lesson.descText }}</p>
+{% block content %}
+    <div class="lesson">
+        <a href="{{ path('category') }}">Retour aux formations</a>
+        <div class="lesson-header">
+            <h1>{{ lesson.title }}</h1>
+            <p>{{ lesson.createdAt|date('d M Y') }}</p>
+            <hr>  
+        </div>
+
+        <div class="lesson-video">
+            <iframe width="560" height="315" src="{{ lesson.url }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="lesson-content">
+            <p>{{ lesson.content|raw }}</p>
+        </div>
+
     </div>
-    <div class="lesson-content">
-        <p>{{ lesson.content|raw }}</p>
-    </div>
+    
+
 
 {% endblock %}

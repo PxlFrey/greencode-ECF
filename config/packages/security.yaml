@@ -39,9 +39,12 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+         - { path: ^/account, roles: ROLE_APPRENANT }
          - { path: ^/admin, roles: ROLE_ADMIN }
-         - { path: ^/learn, roles: ROLE_USER }
-         - { path: ^/lesson, roles: ROLE_USER }
+         - { path: ^/formations, roles: ROLE_FORMATEUR }
+         - { path: ^/lesson, roles: ROLE_APPRENANT }
+
+    
 
 when@test:
     security:

@@ -2,19 +2,39 @@ vich_uploader:
     db_driver: orm
 
     mappings:
-       formation_images:
+      profile_users:
+         uri_prefix: '%profile_users%'
+         upload_destination: '%kernel.project_dir%/public%profile_users%'
+         namer:
+            service: Vich\UploaderBundle\Naming\UniqidNamer
+         delete_on_update: false
+         delete_on_remove: false
+
+      library:
+         uri_prefix: '%library%'
+         upload_destination: '%kernel.project_dir%/public%library%'
+         namer:
+            service: Vich\UploaderBundle\Naming\UniqidNamer
+         delete_on_update: false
+         delete_on_remove: false
+
+      formation_images:
             uri_prefix: '%formation_images%'
             upload_destination: '%kernel.project_dir%/public%formation_images%'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
-            delete_on_update: true
-            delete_on_remove: true
-        
-       lesson_images:
-            uri_prefix: '%lesson_images%'
-            upload_destination: '%kernel.project_dir%/public%lesson_images%'
-            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
-            delete_on_update: true
-            delete_on_remove: true
+            namer:
+               service: Vich\UploaderBundle\Naming\PropertyNamer
+               options: { property: 'slug'}
+            delete_on_update: false
+            delete_on_remove: false
+
+      lesson_images:
+            uri_prefix: /uploads/img/lesson
+            upload_destination: '%kernel.project_dir%/public/uploads/img/lesson/'
+            namer:
+               service: Vich\UploaderBundle\Naming\PropertyNamer
+               options: { property: 'slug'}
+            delete_on_update: false
+            delete_on_remove: false      
 
     #mappings:
     #    products:

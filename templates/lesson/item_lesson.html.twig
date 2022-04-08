@@ -4,9 +4,9 @@
             <p class="time-card">Créé le {{ lesson.createdAt|date('d/m/Y') }}</p>
             <p class="content-card">
             {# On slice le contenu de la leçon et on affiche que les 100 premiers caractères #}
-            {{lesson.descText|striptags|slice(0, 90) ~ '...'  }}</p>
+            {{lesson.featuredText|striptags|slice(0, 90) ~ '...'  }}</p>
             <a href="{{ path( 'lesson', { 'slug':lesson.slug }) }}">
             <button type="button" style="background: {{ category.color|raw }};" >Afficher</button></a>
         </div>
-       <div class="img-card"></div>
+       <div class="img-card" style="background: url({{ vich_uploader_asset(lesson, 'imageFile') }}) center no-repeat; background-size: cover;" ></div>
 </div>

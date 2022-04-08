@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <section class="page">
+        <div class="left-col">
+            <div class="home-content">
+                <div class="intro">
+                <h2> Bienvenue sur GreenCode </h2>
+                <h1> Coder de manière responsable et durable</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum sem rutrum diam aliquam tristique. Maecenas blandit accumsan volutpat. Mauris in ipsum euismod justo bibendum suscipit. Nam sed nulla eu eros varius dapibus nec in risus. Sed vel eros id sapien fermentum posuere. Aliquam aliquet euismod felis ut euismod. Donec in urna libero. Fusce in sem orci.</p>
+            </div>
+            <div class="last-formation">
+               <h2>Dernières formations en ligne</h2>
+                    {% for category in categories %}
+                        <li><a href="{{ path('category_show', {'slug': category.slug, 'id': category.id}) }}">{{ category.name }}</a></li>
+                    {% endfor %}
+            </div>
+        </div>
+        </div>
+        <div class="right-col">
+            <div class="home-img"></div>
+        </div>
+    </section>
+{% endblock %}

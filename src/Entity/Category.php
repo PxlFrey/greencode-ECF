@@ -7,8 +7,16 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+
+/**
+ * @Vich\Uploadable
+ */
+
+
 class Category implements TimeInterface
 {
     #[ORM\Id]
@@ -28,9 +36,6 @@ class Category implements TimeInterface
     #[ORM\ManyToMany(targetEntity: Lesson::class, mappedBy: 'category')]
     private $lessons;
 
-    //#[ORM\ManyToOne(targetEntity: Media::class, inversedBy: 'categories')]
-    //private $featuredImage;
-
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $featuredText;
 
@@ -39,6 +44,16 @@ class Category implements TimeInterface
 
     #[ORM\Column(type: 'datetime', nullable: true)]
     private $updatedAt;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $file;
+
+    /**
+     * @Vich\UploadableField(mapping="formation_images", fileNameProperty="file")
+     * @var File
+     */
+    private $imageFile;
+
 
     public function __construct()
     {
@@ -110,18 +125,6 @@ class Category implements TimeInterface
         return $this;
     }
 
-    public function getFeaturedImage(): ?Media
-    {
-        return $this->featuredImage;
-    }
-
-    public function setFeaturedImage(?Media $featuredImage): self
-    {
-        $this->featuredImage = $featuredImage;
-
-        return $this;
-    }
-
     public function getFeaturedText(): ?string
     {
         return $this->featuredText;
@@ -132,11 +135,6 @@ class Category implements TimeInterface
         $this->featuredText = $featuredText;
 
         return $this;
-    }
-
-    public function __toString() : string
-    {
-        return $this->name;
     }
 
     public function getCreatedAt(): ?\DateTimeInterface
@@ -161,5 +159,36 @@ class Category implements TimeInterface
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(?string $file): self
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    public function setImageFile(File $file = null)
+    {
+        $this->imageFile = $file;
+
+        if ($file) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+    
+    public function __toString() : string
+    {
+        return $this->name;
     }
 }

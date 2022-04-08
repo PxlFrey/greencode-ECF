@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'inscrire chez GreenCode{% endblock %}
+
+{% block body%}
+<section class="page">
+    <div class="form-col">
+        <h1>Formulaire d'inscription</h1>
+        <form name="registration_form" method="post">
+            <div class="form-group">
+                <label for="firstName" for="registration_form_firstName">Prénom</label>
+                <input id="registration_form_firstName" type="text" name="registration_form[firstName]" class="form-control" max-length="255" placeholder="Prénom">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName" for="registration_form_lastName">Nom</label>
+                <input id="registration_form_lastName" type="text" name="registration_form[lastName]" class="form-control" max-length="255" placeholder="Nom">
+            </div>
+
+            <div class="form-group">
+                <label for="username" for="registration_form_username">Pseudo</label>
+                <input id="registration_form_username" type="text" name="registration_form[username]" class="form-control" max-length="255" placeholder="Pseudo">
+            </div>
+
+            <div class="form-group">
+                <label for="email" for="registration_form_email">Adresse email</label>
+                <input id="registration_form_email" required="required" type="email" name="registration_form[email]" class="form-control" max-length="180" placeholder="Adresse email"> 
+            </div>
+
+            <div class="form-group">
+                <label for="password" for="registration_form_plainPassword">Mot de passe</label>
+                <input id="registration_form_plainPassword" required="required" type="password" name="registration_form[plainPassword]" class="form-control" autocomplete="new-password">
+            </div>
+
+            <div class="form-check">
+                <input id="registration_form_agreeTerms" type="checkbox" name="registration_form[agreeTerms]" class="form-check-input" required="required" value="1">
+                <label for="registration_form_agreeTerms" class="form-check-label">J'accepte les <a href="#">conditions générales d'utilisation</a></label>
+            </div>    
+            
+            <button type="submit" class="btn-login">S'inscrire</button>
+        
+            <input id="registration_form_token" type="hidden" name="registration_form[_token]" value="{{ csrf_token('registration_form') }}">
+
+    </div>
+
+
+{#
+        {{ form_start(registrationForm) }}
+        <h1>Formulaire d'inscription</h1>
+        <div class="form-group">
+
+
+
+
+
+
+
+
+            {{ form_row(registrationForm.lastName, {
+            'label': 'Nom',
+            'attr':{'placeholder': 'Nom'}
+            })
+            }}
+        </div>    
+        <div class="form-group">
+            {{ form_row(registrationForm.firstName, {
+            'label': 'Prénom',
+            'attr':{'placeholder': 'Prénom'}
+            })
+            }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.username, {
+            'label': 'Pseudo',
+            'attr':{'placeholder': 'Pseudo'}
+            })
+            }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.email, {
+            'label': 'Email',
+            'attr':{'placeholder': 'Email'}
+            })
+            }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.plainPassword, {
+            'label': 'Mot de passe',
+            'attr':{'placeholder': 'Mot de passe'}
+            })
+            }}
+        </div>    
+        <div class="form-group">
+            {{ form_row(registrationForm.agreeTerms, {
+                'label': 'Valider les conditions d\'utilisation du site',
+            }) }}
+        </div>
+
+        <button type="submit" class="btn-login">S'inscrire</button>
+        {{ form_end(registrationForm) }}
+    </div>#}
+    <div class="right-col">
+        <div class="register-img"></div>
+    </div>
+</section>    
+{% endblock %}
