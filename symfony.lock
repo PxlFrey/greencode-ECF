@@ -86,6 +86,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.7"
     },
+    "heroku/heroku-buildpack-php": {
+        "version": "v215"
+    },
     "jms/metadata": {
         "version": "2.6.1"
     },
