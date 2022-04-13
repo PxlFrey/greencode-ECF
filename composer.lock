@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f3d6a7b816d19b62cfdc66c41869b33",
+    "content-hash": "86c4dac9b95650f31ae9b9d273b3a211",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -6210,85 +6210,6 @@
             "time": "2022-03-31T17:18:25+00:00"
         },
         {
-            "name": "symfony/web-profiler-bundle",
-            "version": "v6.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/web-profiler-bundle.git",
-                "reference": "7d7d2d73406b0b2831fec2026c54b5a5f59db41b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/web-profiler-bundle/zipball/7d7d2d73406b0b2831fec2026c54b5a5f59db41b",
-                "reference": "7d7d2d73406b0b2831fec2026c54b5a5f59db41b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0.2",
-                "symfony/config": "^5.4|^6.0",
-                "symfony/framework-bundle": "^5.4|^6.0",
-                "symfony/http-kernel": "^5.4|^6.0",
-                "symfony/routing": "^5.4|^6.0",
-                "symfony/twig-bundle": "^5.4|^6.0",
-                "twig/twig": "^2.13|^3.0.4"
-            },
-            "conflict": {
-                "symfony/dependency-injection": "<5.4",
-                "symfony/form": "<5.4",
-                "symfony/mailer": "<5.4",
-                "symfony/messenger": "<5.4"
-            },
-            "require-dev": {
-                "symfony/browser-kit": "^5.4|^6.0",
-                "symfony/console": "^5.4|^6.0",
-                "symfony/css-selector": "^5.4|^6.0",
-                "symfony/stopwatch": "^5.4|^6.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Bundle\\WebProfilerBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Provides a development tool that gives detailed information about the execution of any request",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/web-profiler-bundle/tree/v6.0.6"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2022-02-28T15:48:58+00:00"
-        },
-        {
             "name": "symfony/webpack-encore-bundle",
             "version": "v1.14.0",
             "source": {
@@ -6667,53 +6588,7 @@
             "time": "2021-12-23T17:28:12+00:00"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "heroku/heroku-buildpack-php",
-            "version": "v215",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "0c1185ad87156242eeadaae1d7fa10c07689b173"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/0c1185ad87156242eeadaae1d7fa10c07689b173",
-                "reference": "0c1185ad87156242eeadaae1d7fa10c07689b173",
-                "shasum": ""
-            },
-            "bin": [
-                "bin/heroku-php-apache2",
-                "bin/heroku-php-nginx"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "David Zuelke",
-                    "email": "dz@heroku.com"
-                }
-            ],
-            "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP and Apache2/Nginx as on Heroku",
-            "homepage": "https://github.com/heroku/heroku-buildpack-php",
-            "keywords": [
-                "apache",
-                "apache2",
-                "foreman",
-                "heroku",
-                "nginx",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/heroku/heroku-buildpack-php/issues",
-                "source": "https://github.com/heroku/heroku-buildpack-php/tree/v215"
-            },
-            "time": "2022-04-08T12:00:48+00:00"
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
