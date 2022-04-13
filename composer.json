@@ -11,6 +11,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "easycorp/easyadmin-bundle": "^4.0",
         "sensio/framework-extra-bundle": "^6.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
         "symfony/flex": "^2",
@@ -24,8 +25,6 @@
         "symfony/yaml": "6.0.*",
         "twbs/bootstrap": "5.1.3",
         "vich/uploader-bundle": "^1.19"
-    },
-    "require-dev": {
     },
     "config": {
         "allow-plugins": {
