@@ -17,7 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
-
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 
 
 class AdminController extends AbstractDashboardController
@@ -44,10 +44,18 @@ class AdminController extends AbstractDashboardController
        return $this->redirect($url);
     }
 
+    public function configureAssets(): Assets
+    {
+        return Assets::new()
+            ->addCssFile('assets/css/admin.css');
+    }
+    
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('GreenCode Admin');
+            ->setTitle('<img src="assets/img/logo-footer.svg">')
+            ->setFaviconPath('assets/img/favicon.svg');
+
     }
 
     public function configureMenuItems(): iterable

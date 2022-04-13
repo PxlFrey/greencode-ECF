@@ -3,24 +3,26 @@
 {% block title %}Postuler chez GreenCode{% endblock %}
 
 {% block body %}
-<section class="page">
+<section>
+    <div data-aos="flip-up" class="img-bloc" style="background: url('/assets/img/postulate.jpg') no-repeat center; background-size: cover;"></div>
+    <div class="content-bloc">
     <div class="form-col">
         <h1>Postuler chez GreenCode</h1>
         <form name="coach-form" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="firstName" for="coach_form_firstName">Prénom</label>
-                <input id="coach_form_firstName" type="text" name="coach_form[firstName]" class="form-control" max-length="255" placeholder="Prénom">
+                <input id="coach_form_firstName" type="text" name="coach_form[firstName]" class="form-control" max-length="255">
             </div>
 
             <div class="form-group">
                 <label for="lastName" for="coach_form_lastName">Nom</label>
-                <input id="coach_form_lastName" type="text" name="coach_form[lastName]" class="form-control" max-length="255" placeholder="Nom">
+                <input id="coach_form_lastName" type="text" name="coach_form[lastName]" class="form-control" max-length="255">
             </div>
 
             <div class="form-group">
                 <label for="username" for="coach_form_username">Pseudo</label>
-                <input id="coach_form_username" type="text" name="coach_form[username]" class="form-control" max-length="255" placeholder="Pseudo">
+                <input id="coach_form_username" type="text" name="coach_form[username]" class="form-control" max-length="255">
             </div>
 
             <div class="form-group">
@@ -30,7 +32,7 @@
             
             <div class="form-group">
                 <label for="email" for="coach_form_email">Adresse email</label>
-                <input id="coach_form_email" required="required" type="email" name="coach_form[email]" class="form-control" max-length="180" placeholder="Adresse email"> 
+                <input id="coach_form_email" required="required" type="email" name="coach_form[email]" class="form-control" max-length="180"> 
             </div>
 
             <div class="form-group">
@@ -42,13 +44,13 @@
                 <fieldset>
                     <legend>Photo de profil</legend>
                     <div class="vich-image">
-                        <input id="coach_form_imageFile_file" type="file" name="coach_form[imageFile][file]" class="form-control" placeholder="Photo de profil">
+                        <input id="coach_form_imageFile_file" type="file" name="coach_form[imageFile][file]" class="outline-none">
                     </div>
                 </fieldset>    
             </div>
             
             <div class="form-check">
-                <input id="coach_form_agreeTerms" type="checkbox" name="coach_form[agreeTerms]" class="form-check-input" required="required" value="1">
+                <input id="coach_form_agreeTerms" type="checkbox" name="coach_form[agreeTerms]" class="outline-none" required="required" value="1">
                 <label for="coach_form_agreeTerms" class="form-check-label">J'accepte les <a href="#">conditions générales d'utilisation</a></label>
             </div>    
             
@@ -58,10 +60,7 @@
         </form>
 
     </div>
-    <div class="right-col">
-        <div class="register-img"></div>
-    </div>
-</section>            
+    </section>            
 
 
 

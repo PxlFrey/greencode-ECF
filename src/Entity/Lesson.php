@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 
+
 #[ORM\Entity(repositoryClass: LessonRepository::class)]
 /**
  * @Vich\Uploadable
@@ -31,7 +32,7 @@ class Lesson implements TimeInterface
     #[ORM\Column(type: 'text', nullable: true)]
     private $content;
 
-    #[ORM\Column(type: 'string', length: 100, nullable: true)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $featuredText;
 
     #[ORM\Column(type: 'datetime')]
@@ -46,7 +47,7 @@ class Lesson implements TimeInterface
     #[ORM\ManyToMany(targetEntity: Library::class, inversedBy: 'lessons')]
     private $media;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $file;
 
     /**
@@ -54,9 +55,18 @@ class Lesson implements TimeInterface
      * @var File
      */
     private $imageFile;
-
+    
     #[ORM\Column(type: 'string', length: 255)]
     private $url;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $pdfFile;
+
+    /**
+     * @Vich\UploadableField(mapping="lesson_pdf", fileNameProperty="pdfFile")
+     * @var File
+     */
+    private $pdfVichFile;
 
 
 
@@ -114,9 +124,9 @@ class Lesson implements TimeInterface
         return $this->featuredText;
     }
 
-    public function setDescText(?string $descText): self
+    public function setFeaturedText(?string $featuredText): self
     {
-        $this->descText = $descText;
+        $this->featuredText = $featuredText;
 
         return $this;
     }
@@ -201,7 +211,7 @@ class Lesson implements TimeInterface
         return $this->file;
     }
 
-    public function setFile(string $file): self
+    public function setFile(?string $file): self
     {
         $this->file = $file;
 
@@ -239,6 +249,31 @@ class Lesson implements TimeInterface
         return $this;
     }
 
+    public function getPdfFile(): ?string
+    {
+        return $this->pdfFile;
+    }
+
+    public function setPdfFile(?string $pdfFile): self
+    {
+        $this->pdfFile = $pdfFile;
+
+        return $this;
+    }
+
+    public function setpdfVichFile(File $file = null)
+    {
+        $this->pdfVichFile = $file;
+
+        if ($file) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getpdfVichFile(): ?File
+    {
+        return $this->pdfVichFile;
+    }
 }
 
 

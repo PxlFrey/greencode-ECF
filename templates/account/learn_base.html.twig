@@ -1,18 +1,43 @@
 {% extends 'base.html.twig' %}
 
-        {% block content %}
-        <div id="user-page">
-            <div class="user-welcome">
-                <h1>Bienvenue {{ user.username }}</h1>
-                <p>Bienvenue sur votre parcours, retrouvez ici la liste des différentes formations. Cliquer sur la formation que vous souhaitez, pour rejoindre les différentes leçons.</p>
-            </div> 
-            <div class="user-content">
+{% block body %}
+
+<div class="content-bloc">
+        <h1>Bienvenue</h1>
+        <h2>Vous êtes connecté en tant que {{ user.firstname }} {{ user.lastName}} </h2>
+        <p style="text-decoration : underline">Informations de votre compte</p>
+        <div data-aos="flip-up" class="user-card">
+            <div class="user-img" style="background: url(uploads/library/profile_users/{{ user.profileFile }}) center no-repeat; background-size: cover">
+            </div>
+            <div class="user-infos">
+                <p><span>Nom :</span> {{ user.lastName }}</p>
+                <p><span>Prénom :</span> {{ user.firstName }}</p>
+                <p><span>Nom d'utilisateur :</span> {{ user.username }}</p>
+                <p><span>Email :</span> {{ user.email }}</p>
+                {% if user.roles[0] == 'ROLE_ADMIN' %}
+                    <p><span>Rôle :</span> Administrateur(trice)</p>
+                {% else %}
+                    {% if user.roles[0] == 'ROLE_FORMATEUR' %}
+                        <p><span>Rôle :</span> Formateur(trice)</p>
+                    {% else %}
+                        <p><span>Rôle :</span> Etudiant(e)</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <p>Bienvenue sur votre parcours, retrouvez ici la liste des différentes formations. Cliquer sur la formation que vous souhaitez, pour rejoindre les différentes leçons.</p>
+    </div> 
+    <div class="content-bloc">
                     <h2>Liste des formations</h2>
-                    <div class="desktop-list">
-                    {% for category in categories %}
-                    {%  include 'category/item.html.twig' with { categories } %}
-                    {% endfor %}
+                    <div class="last-formation">
+                     <ul>
+                        {% for category in categories %}
+                        <li><a href="{{ path('category_show', {'slug': category.slug, 'id': category.id}) }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                     </ul>
+
                     </div>
             </div>
-        </div>    
+</div>    
         {% endblock %}

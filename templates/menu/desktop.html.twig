@@ -1,42 +1,9 @@
-  <div class="logo">
-      <a href="{{ path('home') }}"><img src={{ asset("assets/img/logo.png") }}></a>
-  </div>
-  <div class="navigation">
-      {% if not app.user %}
-          <ul>
-            <li class="current"><a href="{{ path('home') }}">Accueil</a></li>
-            <li><a href="{{ path('category') }}">Formations</a></li>
-            <li><a href="{{ path('postulate') }}">Postuler</a></li>
-            <li><a href="{{ path('register') }}">S'inscrire</a></li>
+<div class="navigation">
+    <ul>
+      <li><a href="{{ path('home') }}">Accueil</a></li>
+      <li><a href="{{ path('category') }}">Formations</a></li>
+      <li><a href="{{ path('postulate') }}">Postuler</a></li>
+      <li><a href="{{ path('register') }}">S'inscrire</a></li>
+    </ul>
+</div> 
 
-          </ul>
-      {% endif %}
-  </div> 
-  <div class="login">
-          {% if app.user %}
-          <p>Bonjour {{ app.user.firstName}} {{ app.user.lastName }}, ravi de vous voir connecté !</p>
-          <div class="login-dropdown">
-            <button class="login-dropbtn">
-              <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 16H24V13.3333H0V16ZM0 9.33333H24V6.66667H0V9.33333ZM0 0V2.66667H24V0H0Z" fill="#"/>
-              </svg>
-            </button>
-              <div class="login-dropdown-content">
-                <a href="{{ path('home') }}">Accueil</a>
-                <a href="{{ path('account') }}">Mon compte</a>
-                {% if app.user.roles[0] == 'ROLE_ADMIN' %}
-                <a href="{{ path('admin') }}">Administration</a>
-                {% endif %}
-                {% if app.user.roles[0] == 'ROLE_FORMATEUR' %}
-                  <a href="{{ path('formations') }}">Gestion des formations</a>
-                {% endif %}
-                <a href="{{ path('app_logout') }}">Se déconnecter</a>  
-              </div>
-          </div>
-          {% endif %}
-          {% if not app.user %}
-            {% include 'menu/mobile.html.twig' %}
-            <a class="btn" href="{{ path('login') }}">Se connecter</a>  
-          {% endif %}
-        
-  </div>       

@@ -2,22 +2,27 @@
 
 {% block title %}{{ lesson.title }}{% endblock %}
 
-{% block content %}
-    <div class="lesson">
-        <a href="{{ path('category') }}">Retour aux formations</a>
-        <div class="lesson-header">
-            <h1>{{ lesson.title }}</h1>
-            <p>{{ lesson.createdAt|date('d M Y') }}</p>
-            <hr>  
-        </div>
+{% block body %}
+<section>
+    <div data-aos="flip-up" class="img-show">
+        <img class="img-preview" src="{{ vich_uploader_asset(lesson, 'imageFile') }}">
+    </div>
 
-        <div class="lesson-video">
+    <div class="content-bloc">
+        <p>{{ lesson.createdAt|date('d M Y') }}</p>
+        <h1 data-aos="fade-left">{{ lesson.title }}</h1>
+        <p data-aos="fade-right">{{ lesson.featuredText }}</p>
+
+
+        <div class="video-bloc">
             <iframe width="560" height="315" src="{{ lesson.url }}" frameborder="0" allowfullscreen></iframe>
         </div>
-
+        <a class="btn-login download" target="_blank" class="btn-login" href="{{ vich_uploader_asset(lesson, 'pdfVichFile') }}">Télécharger la leçon en .pdf</a>
         <div class="lesson-content">
             <p>{{ lesson.content|raw }}</p>
         </div>
+
+        <button class="btn-login"><a href="{{ 'category' }}"></a>Retour aux formations</button>
 
     </div>
     

@@ -3,10 +3,14 @@
 {% block title %}Nos formations{% endblock %}
 
 {% block body %}
-    <h1>Liste de nos formations actuelles</h1>
-        <div class="list">
+<section>
+    <div class="content-bloc">
+        <h1 data-aos="fade-up" >Notre catalogue de formations</h1>
+            <div class="cards-list">
             {% for category in categories %}
-            {%  include 'formations/item_formation.html.twig' with { categories } %}
+            {%  include 'formations/card-formation.html.twig' with { categories } %}
             {% endfor %}
-        </div>
-{% endblock %}
+            </div>
+    </div>
+</section>
+{% endblock %}            

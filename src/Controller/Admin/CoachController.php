@@ -11,6 +11,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -39,10 +41,17 @@ class CoachController extends AbstractDashboardController
        return $this->redirect($url);
     }
 
+    public function configureAssets(): Assets
+    {
+        return Assets::new()
+            ->addCssFile('assets/css/admin.css');
+    }
+
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('GreenCode Administration');
+            ->setTitle('<img src="assets/img/logo-footer.svg">')
+            ->setFaviconPath('assets/img/favicon.svg');
     }
 
     public function configureMenuItems(): iterable

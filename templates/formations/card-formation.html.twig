@@ -1,0 +1,17 @@
+<div class="card">
+
+    <a class="img-card" href="{{ path('category_show', {'slug': category.slug, 'id': category.id}) }}">
+        <div class="background-card">
+            <img src="{{ asset('assets/img/more.svg') }}" alt="...">
+        </div>    
+        <img class="img-preview" src="{{ vich_uploader_asset(category, 'imageFile') }}" alt="..." >
+    </a>   
+
+    <div class="about-card">
+        <h2 class="title-card">{{ category.name }}</h2>
+        <p class="time-card">Créé le {{ category.createdAt|date('d/m/Y') }}</p>
+        <p>
+            {# On slice le contenu de la leçon et on affiche que les 100 premiers caractères #}
+            {{category.featuredText|striptags|slice(0, 90) ~ '...'  }}</p>
+    </div>
+</div>

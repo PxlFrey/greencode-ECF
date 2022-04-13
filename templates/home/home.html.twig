@@ -3,24 +3,18 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <section class="page">
-        <div class="left-col">
-            <div class="home-content">
-                <div class="intro">
-                <h2> Bienvenue sur GreenCode </h2>
-                <h1> Coder de manière responsable et durable</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rutrum sem rutrum diam aliquam tristique. Maecenas blandit accumsan volutpat. Mauris in ipsum euismod justo bibendum suscipit. Nam sed nulla eu eros varius dapibus nec in risus. Sed vel eros id sapien fermentum posuere. Aliquam aliquet euismod felis ut euismod. Donec in urna libero. Fusce in sem orci.</p>
-            </div>
-            <div class="last-formation">
-               <h2>Dernières formations en ligne</h2>
-                    {% for category in categories %}
-                        <li><a href="{{ path('category_show', {'slug': category.slug, 'id': category.id}) }}">{{ category.name }}</a></li>
-                    {% endfor %}
-            </div>
-        </div>
-        </div>
-        <div class="right-col">
-            <div class="home-img"></div>
+    <section>
+        <div data-aos="flip-up" class="img-bloc" style="background: url('/assets/img/home.jpg') no-repeat center; background-size: cover;"></div>
+        <div class="content-bloc">
+                <h1 data-aos="fade-left"> Coder de manière responsable et durable</h1>
+                <p data-aos="fade-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan suscipit molestie. Suspendisse id leo faucibus, convallis eros a, eleifend nunc. Proin ultricies tincidunt nisl, at tempus lorem elementum non. Ut efficitur porttitor est at iaculis. Vivamus pharetra tortor tortor, quis consectetur ligula ornare at. Vivamus at tortor ac augue volutpat volutpat volutpat non sapien. Suspendisse ultrices, nisl tincidunt interdum consequat, enim quam sollicitudin magna, eget pharetra tortor nunc at dui. Aenean hendrerit pellentesque condimentum. Aliquam dictum nunc massa, suscipit dictum metus ultrices vitae.</p>
+                <p data-aos="fade-down">Donec fringilla ligula risus, ac iaculis purus bibendum in. Cras quis pulvinar libero. Nunc consequat finibus est, et viverra urna dictum quis. Nunc mollis tincidunt augue, et viverra erat ullamcorper vel. In libero urna, vehicula ut ornare sed, efficitur vitae mauris. Integer sit amet cursus nisi, sit amet tempus quam. Nullam porttitor urna sit amet dapibus tristique. Proin est lorem, lacinia nec iaculis interdum, ultrices nec erat. Maecenas eu magna congue, interdum leo nec, pellentesque ipsum. Quisque at volutpat nisi. Nunc eget arcu mauris. Vivamus placerat tellus sit amet viverra pulvinar. Duis eget lectus mollis, tempor risus non, efficitur ligula.</p>
+                <div class="last-formation">
+                    <h2>Dernières formations en ligne</h2>
+                        {% for category in categories %}
+                            <li><a href="{{ path('category_show', {'slug': category.slug, 'id': category.id}) }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                </div>
         </div>
     </section>
 {% endblock %}

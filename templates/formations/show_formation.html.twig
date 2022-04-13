@@ -3,21 +3,19 @@
 {% block title %}{{ category.name }}{% endblock %}
 
 {% block body %}
-    <div class="formation-basis">
-        <div class="formation-title">
-            <h1>{{  category.name  }}</h1>
-        </div>
-        
-        <div class="formation-image" style="background: url({{ vich_uploader_asset(category, 'imageFile') }}) center no-repeat; background-size: cover;" alt="..."></div>
-
-        <div class="formation-description">
-            <h2>Description de la formation</h2>
-            {{  category.featuredText|raw }}
-        </div>    
-        
-        <div class="lessons-list">
-            <h2>Liste des leçons</h2>
-                {% include 'lesson/list_lesson.html.twig' with {'lessons': category.lessons} %}
-        </div>
+<section>
+    <div data-aos="flip-up" class="img-show">
+        <img class="img-preview" src="{{ vich_uploader_asset(category, 'imageFile') }}">
     </div>
+
+    <div class="content-bloc">
+        <h1 data-aos="fade-left">{{  category.name  }}</h1>
+        <div class="info">{{ category.featuredText|raw }}</div>
+
+        <div class="cards-list">
+            {% include 'lesson/lesson_list.html.twig' with {'lessons': category.lessons} %}
+        </div> 
+    </div>
+       
+</section>    
 {% endblock %}
