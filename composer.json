@@ -10,7 +10,6 @@
         "doctrine/annotations": "^1.13",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "easycorp/easyadmin-bundle": "^4.0",
-        "heroku/heroku-buildpack-php": "^215.0",
         "sensio/framework-extra-bundle": "^6.2",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
@@ -30,7 +29,8 @@
     "require-dev": {
         "symfony/maker-bundle": "^1.38",
         "symfony/stopwatch": "6.0.*",
-        "symfony/web-profiler-bundle": "6.0.*"
+        "symfony/web-profiler-bundle": "6.0.*",
+        "heroku/heroku-buildpack-php": "^215.0"
     },
     "config": {
         "allow-plugins": {
