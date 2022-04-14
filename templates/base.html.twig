@@ -3,13 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>GreenCode - {% block title %} {% endblock %}</title>
-        <link rel="icon" href="">
-        {% block stylesheets %}
-                
-        {% endblock %}
+        <link rel="icon" href="assets/img/favicon.png">
+
+
+
+        {#<link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">#}
+        
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        {% block stylesheets %}
+        {% endblock %}
 
 
     </head>
