@@ -27,10 +27,9 @@
                </button>
                <div class="login-dropdown-content">
                 <a href="{{ path('home') }}">Accueil</a>
-                {% if app.user.roles[0] == 'ROLE_ADMIN' %}
-                <a href="{{ path('admin') }}">Administration</a>
-                {% endif %}
-                {% if app.user.roles[0] == 'ROLE_FORMATEUR' %}
+                {% if is_granted('ROLE_ADMIN') %}
+                  <a href="{{ path('admin') }}">Administration</a>
+                {% elseif is_granted('ROLE_FORMATEUR') %}
                   <a href="{{ path('formations') }}">Gestion des formations</a>
                 {% endif %}
                 <a href="{{ path('account') }}">Mon compte</a>
