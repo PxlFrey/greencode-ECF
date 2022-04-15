@@ -12,11 +12,11 @@ GreenCode est un organisme de formation permettant à tout instructeur expert da
 
 ### Lien de la version en ligne du projet
 
-    <http://greencode-formations.herokuapp.com>
+    http://greencode-formations.herokuapp.com
 
 ### Lien vers le GitHub du projet
 
-    <https://github.com/PxlFrey/greencode-ECF.git>
+    https://github.com/PxlFrey/greencode-ECF.git
 
 ## Spécifications techniques
 
@@ -26,6 +26,7 @@ GreenCode est un organisme de formation permettant à tout instructeur expert da
 - AOS Library (<https://github.com/michalsnik/aos>)
 - Unsplash (<https://unsplash.com/>)
 - Symfony 6
+- PHP 8.0.2
 - EasyAdmin Bundle pour l'administration
 - My SQL Command Line 8.0 pour l'écriture de la base de données
 - Heroku pour le déploiement
