@@ -38,7 +38,7 @@ class AdminController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-       $url= $this->adminUrlGenerator->setController(CategoryCrudController::class)
+       $url= $this->adminUrlGenerator->setController(UserCrudController::class)
            ->generateUrl();
 
        return $this->redirect($url);
@@ -62,24 +62,10 @@ class AdminController extends AbstractDashboardController
     {
       yield MenuItem::linkToUrl('Retour au site', 'fa fa-rotate-left', '/' );
 
-
+/** L'administrateur n'a accès qu'à la partie Utilisateurs, il peut éditer certaines données */
       yield MenuItem::section('Gestion des Utilisateurs', 'fa fa-users');
       yield MenuItem::linkToCrud('Tous les utilisateurs', 'fas fa-list', User::class);
       yield MenuItem::linkToCrud('Ajouter un utilisateur', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW);
-
-      yield MenuItem::section('Gestion des Formations', 'fa fa-book');
-      yield MenuItem::linkToCrud('Toutes les formations', 'fas fa-list', Category::class);
-      yield MenuItem::linkToCrud('Ajouter une formation', 'fas fa-plus', Category::class)->setAction(Crud::PAGE_NEW);
-      yield MenuItem::linkToRoute('Aller à la page', 'fa fa-arrow-right', 'category');
-     
-
-      yield MenuItem::section('Gestion des Leçons', 'fa fa-book');
-      yield MenuItem::linkToCrud('Toutes les leçons', 'fas fa-list', Lesson::class);
-      yield MenuItem::linkToCrud('Ajouter une leçon', 'fas fa-plus', Lesson::class)->setAction(Crud::PAGE_NEW);
-
-      yield MenuItem::section('Mediathèque', 'fa fa-file-image');
-      yield MenuItem::linkToCrud('Tous les médias', 'fas fa-list', Library::class);
-      yield MenuItem::linkToCrud('Ajouter un média', 'fas fa-plus', Library::class)->setAction(Crud::PAGE_NEW);
 
     }
 

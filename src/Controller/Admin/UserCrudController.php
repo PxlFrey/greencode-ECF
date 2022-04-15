@@ -30,7 +30,7 @@ class UserCrudController extends AbstractCrudController
             TextField::new('lastName', 'Nom')->hideOnIndex(),
             TextField::new('username', 'Nom d\'utilisateur'),
             TextField::new('email', 'Adresse email'),
-            TextField::new('password', 'Mot de passe')->hideOnIndex(),
+
             TextField::new('imageFile', 'Avatar')
             ->setFormType(VichImageType::class)
             ->hideOnIndex(),
