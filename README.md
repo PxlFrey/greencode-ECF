@@ -113,3 +113,16 @@ Renseignez vos informations pour devenir un utilisateur du site.
 - Résumé de la leçon
 - Contenu de la leçon
 
+### Thanks a million to :  (for your illustrations and inspirations...)
+
+ > Nathan Dumlao - <https://unsplash.com/@nate_dumlao>
+AltumCode - <https://unsplash.com/@altumcode>
+Huy Phan - <https://unsplash.com/@huyphan2602>
+Nicole Wolf - <https://unsplash.com/@joeel56>
+Shridhar Gupta - <https://unsplash.com/@shridhar>
+John Lee - <https://unsplash.com/@john_artifexfilms>
+Eberhard Grossgasteiger - <https://unsplash.com/@eberhardgross/collections>
+Chris Lawton - <https://unsplash.com/@chrislawton>
+Gabriel Heinzer - <https://unsplash.com/@6heinz3r>
+Simon Wilkes - <https://unsplash.com/@simonfromengland>
+Bailey Zindel - <https://unsplash.com/@baileyzindel>
