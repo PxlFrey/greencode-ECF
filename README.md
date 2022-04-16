@@ -115,9 +115,10 @@ Renseignez vos informations pour devenir un utilisateur du site.
 
 ### Fonctionnalités en cours de développement
 > Pour valider une leçon, il faudra rajouter un quiz pour valider la leçon  Sur la page d’un quiz, les questions sont affichées les unes à la suite des autres. Chaque question est un formulaire dont les réponses sont des champs de type radio. Au clic du bouton “corriger”, le quiz révèle si les réponses choisies sont correctes ou incorrectes. Si la réponse sélectionnée est incorrecte, alors la bonne réponse est montrée.
+
 > Deux fonctions dynamiques doivent être disponibles pour filtrer les résultats, et ce sans recharger la page :
-- Une barre de recherche
-- Une option “Formations en cours” / “Formations terminées” si l’utilisateur est un apprenant
+    - Une barre de recherche
+    - Une option “Formations en cours” / “Formations terminées” si l’utilisateur est un apprenant
 
 > Lorsque l’on clique sur le bouton “leçon terminée”, la leçon est validée et le parcours
 progresse. Si toutes les leçons ont été suivies, alors la formation est considérée comme terminée pour l’apprenant.
