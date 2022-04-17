@@ -11,7 +11,7 @@ body {
     overflow-x: hidden
 }
 h1, h2, h3{ font-family:"Poppins", sans-serif; }
-h1 { font-size: 54px; margin: 40px 0; line-height: 0.8; color: #3f3f3f; padding: 0 50px; font-weight: 700; }
+h1 { font-size: 54px; margin: 40px 0; line-height: 0.9; color: #3f3f3f; padding: 0 50px; font-weight: 700; }
 h2 { font-size: 18px; font-weight: 500; color: #F1666A; }
 p { font-weight: 300; margin-bottom: 30px; line-height: 1.5; }
 section { display: flex; flex-direction: column; align-items: center; }
@@ -110,7 +110,7 @@ header {
 footer {
   background: #F8FCF8;
   padding: 50px 0 0 0;
-  margin-top: 120px;
+  margin-top: 50px;
   width: 100%;
 }
 .f-cols{
@@ -374,7 +374,7 @@ span { font-weight: 700; color: #F1666A; padding-right: 20px; }
 }
 
 @media (max-width:620px) {
-/*--HEADER--------------------------------*/  
+/*--HEADER--------------------------------------*/  
   header { padding: 0; align-items: center; margin: 20px 0 0 0; padding-bottom: 20px; }
   .login p, .avatar { display: none; }
   .login-dropbtn { padding-right: 0; }
