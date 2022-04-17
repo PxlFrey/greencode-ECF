@@ -291,7 +291,7 @@ fieldset input { width: 100%; border: none; box-shadow: none;}
   margin: 20px 0 0 0;
   color: #3f3f3f;
 } 
-.about-card p { padding: 0; text-align: left; padding-right: 40px; margin: 5px 0;}
+.about-card p { padding: 0 10px 0 0; text-align: left; padding-right: 40px; margin: 5px 0;}
 .time-card { font-size: 12px; padding: 0; }
 
 /*--LESSON--------------------------------*/
@@ -381,7 +381,9 @@ span { font-weight: 700; color: #F1666A; padding-right: 20px; }
   .login-dropdown-content { margin: 0 0 0 -100px;}
   .navigation { display: none; }
   .navigation-mobile { display: inline-block; margin: 20px auto 0 auto;}
-  .navigation-mobile li { padding: 0 20px; transition: 1s;}
+  .navigation-mobile li { padding: 0 15px; transition: 1s;}
+
+
 
 /*--USER ACCOUNT--------------------------------*/
   .user-card { width: 300px;  height: 400px; flex-direction: column; }
@@ -390,6 +392,9 @@ span { font-weight: 700; color: #F1666A; padding-right: 20px; }
   .user-infos { width: 100%; }
 
 /*--LESSON--------------------------------*/
-  .content-bloc p { padding: 0 10px; text-align: justify; }
-  .lesson-content { padding: 0 10px; }
+  .content-bloc p, .lesson-content { padding: 0 10px; }
+  .content-bloc p { text-align: justify; }
+  .about-card p { padding: 0 40px 0 0 }
 }
+
+
