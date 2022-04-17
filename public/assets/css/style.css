@@ -1,8 +1,7 @@
-/*--FONTS--*//*-------------------------*/
+/*--FONTS-----------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500;700&display=swap');
-/*---------------------------------------*/
 
-/*--GENERAL--*//*-------------------------*/
+/*--GENERAL------------------------------*/
 body {
     background: #FFF;
     color: #808080;
@@ -15,6 +14,7 @@ h1, h2, h3{ font-family:"Poppins", sans-serif; }
 h1 { font-size: 54px; margin: 40px 0; line-height: 0.8; color: #3f3f3f; padding: 0 50px; font-weight: 700; }
 h2 { font-size: 18px; font-weight: 500; color: #F1666A; }
 p { font-weight: 300; margin-bottom: 30px; line-height: 1.5; }
+section { display: flex; flex-direction: column; align-items: center; }
 a,
 ul,
 li {
@@ -43,21 +43,16 @@ a:hover { color: #F1666A; transition: 0.5s; }
   background: hsl(124, 32%, 70%, 0.7);
   color: #FFF;
 }
-.connect {
-  margin: 0;
-}
+.connect { margin: 0; }
 iframe { margin: 0 auto; }
-/*---------------------------------------*/
 
-/*--HEADER--*//*-------------------------*/
+/*--HEADER-------------------------------*/
 header,
 .login {
   display: flex;
   flex-direction: row;
   align-items: center;
   z-index: 1;
-
-
 }
 header {
   flex-wrap: wrap;
@@ -86,7 +81,6 @@ header {
   display: block;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
-
 .login-dropdown {
   position: relative;
   display: inline-block;
@@ -113,9 +107,8 @@ header {
 .navigation { margin: 25px auto 0 auto; }
 .navigation ul { display: inline-flex; }
 .navigation li { padding: 0 30px; font-size: 14px; } 
-/*---------------------------------------*/
 
-/*--FOOTER--*//*-------------------------*/
+/*--FOOTER--------------------------------*/
 footer {
   background: #F8FCF8;
   padding: 50px 0 0 0;
@@ -153,9 +146,8 @@ footer svg:hover { fill: hsl(358,83%,73%); }
   cursor: default;
 }
 .copyright p { margin :0 ; padding: 10px;}
-/*---------------------------------------*/
 
-/*--LAYOUT--*//*-------------------------*/
+/*--LAYOUT-------------------------------*/
 #main-container{
   display: flex;
   flex-direction: column;
@@ -163,52 +155,27 @@ footer svg:hover { fill: hsl(358,83%,73%); }
   width: 825px;
   margin: 0 auto;
 }
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.img-bloc {
-  width: 575px;
-  height: 380px;
-}
-.img-show {
-  width: 450px;
-  height: 300px
-}
+.img-bloc { width: 575px; height: 380px; }
+.img-show { width: 450px; height: 300px; }
 .img-bloc,
 .img-show {
   border-radius: 20px;
   margin: 40px 0;
   box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.2);
 }
-.img-bloc img,
-.img-show img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-.content-bloc {
-  text-align: center;
-}
+.img-bloc img, .img-show img { width: 100%; height: 100%; border-radius: 20px; }
+.content-bloc { text-align: center; }
 .content-bloc p, 
-.content-bloc h1 {
-  padding: 0 40px;
-}
-.download {
-  width: 200px;
-}
+.content-bloc h1 { padding: 0 40px; }
+.download { width: 200px; }
 
-
-/*---------------------------------------*/
-
-/*--HOME--*//*-------------------------*/
+/*--HOME-------------------------------*/
 .last-formation h2 { margin-bottom: 30px; }
 .last-formation li { padding-bottom: 25px; font-weight:300; }
 .last-formation a:hover { color: #F1666A; transition: 0.5s; }
-/*---------------------------------------*/
 
-/*--FORMULAIRES--*//*-------------------------*/
+
+/*--FORMULAIRES--------------------------------*/
 .form-col {
   width: 800px;
   display: flex;
@@ -256,9 +223,8 @@ textarea {
 }
 fieldset { width: 100%; height: 80px; }
 fieldset input { width: 100%; border: none; box-shadow: none;}
-/*---------------------------------------*/
 
-/*--CATALOGUE--*//*-------------------------*/
+/*--CATALOGUE--------------------------------*/
 .cards-list {
   display: flex;
   flex-direction: row;
@@ -266,8 +232,8 @@ fieldset input { width: 100%; border: none; box-shadow: none;}
   justify-content: space-around;
   align-items: center;
 }
-/*-----------------------------------------*/
-/*--CARDS--*//*-------------------------*/
+
+/*--CARDS--------------------------------*/
 .card {
   width: 333px;
   height: 400px;
@@ -310,7 +276,6 @@ fieldset input { width: 100%; border: none; box-shadow: none;}
 .img-card img { opacity: 1; transition: opacity 0.7s;}
 .img-card img:hover { opacity: 0; }
 
-
 .card:hover { box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); }
 .card:hover .background-card img { opacity: 1; }
 .card:hover .background-card { opacity: 1; background-color: hsl(124, 32%, 70%, 0.5); }
@@ -331,10 +296,9 @@ fieldset input { width: 100%; border: none; box-shadow: none;}
 } 
 .about-card p { padding: 0; text-align: left; padding-right: 40px; margin: 5px 0;}
 .time-card { font-size: 12px; padding: 0; }
-/*-----------------------------------------*/
 
-/*--LESSON--*//*-------------------------*/
-.info { margin: 40px 0; padding: 0 180px; line-height: 1.5;}
+/*--LESSON--------------------------------*/
+.lesson-date { margin: 0; }
 .lesson-content {
   text-align: justify;
   margin: 50px 0;
@@ -343,7 +307,7 @@ fieldset input { width: 100%; border: none; box-shadow: none;}
   padding: 0 50px;
 }
 
-/*----USER ACCOUNT----*/
+/*--USER ACCOUNT--------------------------------*/
 .user-card {
   width: 550px;
   height: 250px;
@@ -376,75 +340,61 @@ fieldset input { width: 100%; border: none; box-shadow: none;}
 span { font-weight: 700; color: #F1666A; padding-right: 20px; }
 
 
-
-
-/*-- RESPONSIVE -- */
+/*--RESPONSIVE--------------------------------*/
 
 @media (max-width:825px) {
-  #main-container {
-      width: 100%;
-      padding: 0 15px;
-      box-sizing: border-box;
-  }
-
-  header { justify-content: space-around;}
+/*--GENERAL--------------------------------*/
   h1 { font-size: 3em; }
+  iframe { width: 80vw; height: 30vh;}
 
+/*--LAYOUT--------------------------------*/    
+  #main-container { width: 100%; padding: 0 15px; box-sizing: border-box; }
+  .img-bloc,
+  .img-show {
+    width: 100vw;
+    height: 300px;
+    margin: 10px 0 20px 0;
+    border-radius: 0;
+  }
+  .img-show img { border-radius: 0; }
+
+  .content-bloc { width: 80vw; margin: 0 auto; }
+  .content-bloc p { padding: 0 50px; text-align: justify; }
+  .content-bloc h1 { font-size: 3em;  margin-top: 20px; padding: 0 5px; }
+
+/*--HEADER--------------------------------*/  
+  header { justify-content: space-around;}
+  .logo svg { width: 40vw; }
   .navigation { display: none;}
 
+/*--FOOTER--------------------------------*/ 
+  footer { text-align: center; }
 
-  .img-bloc {
-    width: 80vw;
-    height: 200px;
-    margin-bottom: 20px;
-  }
-  .content-bloc p { text-align: justify; padding: 0 50px; }
-  .content-bloc h1 {
-    font-size: 3em;
-    margin-top: 20px;
-    padding: 0 5px;
-  }
-  
-  footer {
-    text-align: center;
-  }
-
+/*--FORMULAIRES--------------------------------*/  
   form { width: 80vw; }
-
-  .form-col h1 {
-    font-size: 2em;
-    margin-top: 20px;
-    padding: 0 5px;
-  }
+  .form-col h1 { font-size: 2em; margin-top: 20px; padding: 0 5px; }
   .col { margin-bottom: 30px;}
-  .f-cols {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  .f-cols { display: flex; flex-direction: column;  align-items: center;  }
 }
 
 @media (max-width:620px) {
-
-  header, .user-card {
-    flex-direction: column;
-    justify-content: space-around;
+/*--HEADER--------------------------------*/  
+  header {
+    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-  }
-  
-  .logo, .login p, .avatar{ display: none; }
-  .login-dropbtn { padding-right: 0; }
-
-
-  .user-img {
-    width: 200px;
-    height: 400px;
     margin: 20px 0 0 0;
   }
-  .user-card {
-    width: 300px;
-    height: 400px;
-  }
+  .login p, .avatar { display: none; }
+  .login-dropbtn { padding-right: 0; }
+  .login-dropdown-content { margin: 0 0 0 -100px;}
 
+/*--USER ACCOUNT--------------------------------*/
+  .user-card { width: 300px;  height: 400px; flex-direction: column; }
+  .user-card, .user-infos {align-items: center;}
+  .user-img { width: 200px; height: 450px; margin: 20px 0 0 0; }
+  .user-infos { width: 100%; }
+
+/*--LESSON--------------------------------*/
+  .content-bloc p { padding: 0 10px; text-align: justify; }
+  .lesson-content { padding: 0 10px; }
 }

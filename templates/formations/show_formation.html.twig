@@ -10,7 +10,7 @@
 
     <div class="content-bloc">
         <h1 data-aos="fade-left">{{  category.name  }}</h1>
-        <div class="info">{{ category.featuredText|raw }}</div>
+        <p>{{ category.featuredText|raw }}</p>
 
         <div class="cards-list">
             {% include 'lesson/lesson_list.html.twig' with {'lessons': category.lessons} %}

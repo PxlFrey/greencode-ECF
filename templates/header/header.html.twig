@@ -29,6 +29,7 @@
                 <a href="{{ path('home') }}">Accueil</a>
                 {% if is_granted('ROLE_ADMIN') %}
                   <a href="{{ path('admin') }}">Administration</a>
+                  <a href="{{ path('formations') }}">Gestion des formations</a>
                 {% elseif is_granted('ROLE_FORMATEUR') %}
                   <a href="{{ path('formations') }}">Gestion des formations</a>
                 {% endif %}
