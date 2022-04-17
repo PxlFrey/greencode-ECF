@@ -102,7 +102,7 @@ header {
 .login-dropdown-content a:hover {background-color: #99CA9C; color: #FFF;}
 .login-dropdown:hover .login-dropdown-content {display: block;}
 .navigation-mobile { display: none; }
-.navigation, .navigation-mobile { margin: 25px auto; }
+.navigation, .navigation-mobile { margin: 25px auto 0 auto; }
 .navigation ul, .navigation-mobile ul { display: inline-flex; }
 .navigation li { padding: 0 30px; font-size: 14px; } 
 
