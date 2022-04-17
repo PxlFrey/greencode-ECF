@@ -18,6 +18,10 @@ GreenCode est un organisme de formation permettant à tout instructeur expert da
 
     https://github.com/PxlFrey/greencode-ECF.git
 
+### Documentation ###
+
+> Vous pouvez retrouvez toutes la documentation dans le dossier "docuementation" à la racine du projet.
+
 ## Spécifications techniques
 
 - HTML 5
@@ -135,7 +139,6 @@ Renseignez vos informations pour devenir un utilisateur du site.
     - Une option “Formations en cours” / “Formations terminées” si l’utilisateur est un apprenant
 > Lorsque l’on clique sur le bouton “leçon terminée”, la leçon est validée et le parcours
 progresse. Si toutes les leçons ont été suivies, alors la formation est considérée comme terminée pour l’apprenant.
-
 
 ### Thanks a million to :  (for your illustrations and inspirations...)
 
