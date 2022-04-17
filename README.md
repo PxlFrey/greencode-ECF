@@ -30,6 +30,7 @@ GreenCode est un organisme de formation permettant à tout instructeur expert da
 - EasyAdmin Bundle pour l'administration
 - My SQL Command Line 8.0 pour l'écriture de la base de données
 - Heroku pour le déploiement
+- JawsDB Maria pour la base de données
 
 ## Installation en local
 
@@ -44,10 +45,10 @@ git clone https://github.com/PxlFrey/greencode-ECF.git:nomDeVotreDossier
 ### Récupérer la base de données
 
 > Le fichier de base de données se situe dans le dossier “Documentation” et se nomme : greencode.sql.
-> Pour importer une base de données à partir d'un fichier d'import, vous pouvez utiliser le client MySQL. Voici la syntaxe pour l’importation:
+> Pour importer une base de données à partir d'un fichier d'import, vous pouvez utiliser le client MySQL. Voici la syntaxe pour l’importation dans le dossier actuel:
 
 ```sh
-mysql -u nom_utilisateur -p nom_de_la_base < greencode.sql
+mysql -h adresse_hôte -u nom_utilisateur -pmot_de_passe -P port nom_de_la_base < greencode.sql
 ```
 
 ### Intégrer la base de données avec symfony
