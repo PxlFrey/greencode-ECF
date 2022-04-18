@@ -20,7 +20,7 @@ GreenCode est un organisme de formation permettant à tout instructeur expert da
 
 ### Documentation ###
 
-> Vous pouvez retrouvez toutes la documentation dans le dossier "docuementation" à la racine du projet.
+> Vous pouvez retrouver toute la documentation dans le dossier "documentation" à la racine du projet.
 
 ## Spécifications techniques
 
