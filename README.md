@@ -71,7 +71,8 @@ Renseignez vos informations pour devenir un utilisateur du site.
 
 ### Accéder à l’administration
 
-> De base, l’accès à l’administration est activé pour toute personne connectée sur le site, pour des raisons de test, ce qui n’et pas le cas du site mise en ligne.
+> De base, l’accès à l’administration sécurisé est activé. Pour tester, veuillez vous rendre à l'encart Définition des rôles. Vous pouvez tout à fait créer votre propre utilisateur, et changer
+> son rôle en repassant administrateur.
 
 - En suivant la route /admin, vous aurez accès à la page d’administration du site.
 - En suivant la route /formations, vous aurez accès à la page dédiée au formateur.
