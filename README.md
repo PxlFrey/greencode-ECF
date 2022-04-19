@@ -97,19 +97,8 @@ Renseignez vos informations pour devenir un utilisateur du site.
 ### Définition des rôles
 
 > L’administrateur a son propre tableau de bord et gère les utilisateurs et donne le rôle de formateur à l’utilisateur qui le souhaite.
-
-- Adresse email : admin@email.com
-- Mot de passe : admin_login
-
 > Le formateur a son propre tableau de bord et gère les leçons et les formations.
-
-- Adresse email : manny@calavera.fr
-- Mot de passe : fandango
-
 > L’apprenant peut accéder aux leçons du site et à son compte.
-
-- Adresse email : judith@hopps.fr
-- Mot de passe : usertest
 
 ### Gestion des formations
 
