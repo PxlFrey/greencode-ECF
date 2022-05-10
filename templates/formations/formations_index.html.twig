@@ -5,7 +5,9 @@
 {% block body %}
 <section>
     <div class="content-bloc">
-        <h1 data-aos="fade-up" >Notre catalogue de formations</h1>
+
+            <h1 data-aos="fade-up" >Notre catalogue de formations</h1>
+            <input type="text" id="search" placeholder="Rechercher une formation...">
             <div class="cards-list">
             {% for category in categories %}
             {%  include 'formations/card-formation.html.twig' with { categories } %}

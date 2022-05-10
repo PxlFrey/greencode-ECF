@@ -12,25 +12,24 @@
 
         {% block stylesheets %}
         {% endblock %}
-
-
     </head>
+
     <body>
 
-        <div id="main-container">
+        <main id="container">
    
             {%  include 'header/header.html.twig' %}
 
             {% block body %}
             {% endblock %}
-        </div>
+        </main>
 
             {%  include 'footer/footer.html.twig' %}
-
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="{{ asset('assets/js/greencode.js') }}"></script>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>AOS.init();</script>
      </body>
+
 </html>

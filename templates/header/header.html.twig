@@ -16,7 +16,7 @@
    </div>
 
    <div class="login">
-          {% if app.user %}
+         {% if app.user %}
             <p>Bonjour {{ app.user.firstName}} {{ app.user.lastName }} !</p>
             <div class="avatar" style="background: url(uploads/library/profile_users/{{ app.user.profileFile }}) center no-repeat; background-size: cover"></div>
             <div class="login-dropdown">
@@ -39,12 +39,12 @@
                 <a href="{{ path('app_logout') }}">Se déconnecter</a>  
                </div>
             </div>
-          {% endif %}
+         {% endif %}
          {% if not app.user %}
             <a class="btn-login connect" href="{{ path('login') }}">Se connecter</a>  
          {% endif %}
    </div>
 
-   {%  include 'menu/desktop.html.twig' %}
+   {%  include 'menu/nav.html.twig' %}
    
 </header>
