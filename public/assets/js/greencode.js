@@ -4,6 +4,7 @@ $(function() {
     const password = document.querySelector('#registration_form_plainPassword');
     const postulate_pw = document.querySelector('#coach_form_plainPassword');
 
+
     // Pour la page /s'inscrire
     togglePassword.addEventListener('click', () => {
       if (password.type === 'password') {
@@ -21,6 +22,7 @@ $(function() {
         postulate_pw.type = 'password';
       }      
     });
+
 });
 
 // Filtre de recherche à la page /formations
